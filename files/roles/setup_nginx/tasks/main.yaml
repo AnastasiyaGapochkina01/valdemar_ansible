@@ -1,0 +1,29 @@
+- name: Install nginx on RedHat
+  yum:
+    name: nginx
+    state: present
+  when:
+    ansible_os_family == "RedHat"
+  notify:
+    - Enable nginx
+
+- name: Install nginx on Debian
+  apt:
+    name: nginx
+    state: present
+  when:
+    ansible_os_family == "Debian"
+  notify:
+    - Enable nginx
+
+- name: Remove default configs
+  file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - "/etc/nginx/conf.d/default.conf"
+    - "/etc/nginx/sites-available/default"
+    - "/etc/nginx/sites-enabled/default"
+  notify:
+    - Reload nginx
+  
