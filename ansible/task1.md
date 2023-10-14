@@ -1,3 +1,5 @@
+[Синтаксис Yaml](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)
+
 1) Поднять две виртуалки: одна master, с которой будем катать плейбуки; вторая - node, куда будем катить
 2) Настроить доступность между виртуалками через пользователя ansible (ssh по ключам)
 3) Установить на мастер ansible
