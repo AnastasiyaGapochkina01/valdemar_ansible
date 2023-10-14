@@ -7,9 +7,9 @@ ansible -i $inventory all -m ping
 В ответе должно быть
 "ping": "pong"
 6) Запустить команду ansible -i $inventory all -m ping с ключом -v (-vvv), для расширенного вывода
-7) Написать плейбук, который будет пинговать node и выводить ответ на ping, Запустить
-8) Написать роль, которая поставит на node nginx, удалит файл default (/etc/nginx/sites-*), сделает после этого проверку конфигурации и релоад (использовать механизм handlers)
-9) Скопировать роли setup_postgres и setup_python3.10 в папку roles и написать плейбук, который прокатает по node три роли
-  - setup_postgres
-  - setup_nginx
-  - setup_python3.10
+7) Написать плейбук, который будет пинговать node и выводить ответ на ping, Запустить ([пример](https://github.com/AnastasiyaGapochkina01/valdemar_ansible/blob/main/ansible/ping_playbook.yaml))
+8) Написать роль, которая поставит на node nginx, удалит файл default (/etc/nginx/sites-*), сделает после этого проверку конфигурации и релоад (использовать механизм handlers) [Пример роли](https://github.com/AnastasiyaGapochkina01/valdemar_ansible/tree/main/ansible/roles/setup_nginx)
+9) Скопировать роли [setup_postgres](https://github.com/AnastasiyaGapochkina01/valdemar_ansible/tree/main/ansible/roles/setup_postgres) и [setup_python3.10](https://github.com/AnastasiyaGapochkina01/valdemar_ansible/tree/main/ansible/roles/setup_python3.10) в папку roles и написать плейбук, который прокатает по node три роли
+    - setup_postgres
+    - setup_nginx
+    - setup_python3.10
